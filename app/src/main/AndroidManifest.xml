@@ -14,6 +14,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.SoloCook">
         <activity
+            android:name=".CreateExchangePost"
+            android:exported="false" />
+        <activity
             android:name=".CommunityInsideActivity"
             android:exported="false" />
         <activity
