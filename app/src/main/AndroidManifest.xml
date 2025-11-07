@@ -17,6 +17,9 @@
             android:name=".BudgetRecipeActivity"
             android:exported="false" />
         <activity
+            android:name=".CreateExchangePost"
+            android:exported="false" />
+        <activity
             android:name=".CommunityInsideActivity"
             android:exported="false" />
         <activity

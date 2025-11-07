@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".CreateExchangePost">
+
+    <!-- Back Button -->
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:background="@color/white"
+        android:orientation="horizontal"
+        app:layout_constraintTop_toTopOf="parent">
+
+
+        <ImageView
+            android:id="@+id/back"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:padding="15dp"
+            android:src="@drawable/arrow_back" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:text="Back"
+            android:textSize="20dp" />
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/tvTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="108dp"
+        android:text="Create Exchange Post"
+        android:textSize="24sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tvSubtitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="20dp"
+        android:text="List the ingredients you have on hand"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvTitle" />
+
+    <!-- Enter the Title -->
+    <TextView
+        android:id="@+id/tvEnterTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="32dp"
+        android:text="Enter the Title"
+        android:textSize="14sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvSubtitle" />
+
+    <EditText
+        android:id="@+id/etTitle"
+        android:layout_width="341dp"
+        android:layout_height="48dp"
+        android:layout_marginHorizontal="32dp"
+        android:layout_marginTop="12dp"
+        android:background="@drawable/radius_white"
+        android:hint="e.g., Potatoes"
+        android:padding="12dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvEnterTitle" />
+
+    <!-- Additional note (optional) -->
+    <TextView
+        android:id="@+id/tvEnterNote"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="32dp"
+        android:text="Additional note (optional)"
+        android:textSize="14sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/etTitle" />
+
+    <EditText
+        android:id="@+id/etDetails"
+        android:layout_width="341dp"
+        android:layout_height="wrap_content"
+        android:minHeight="120dp"
+
+        android:layout_marginHorizontal="32dp"
+        android:layout_marginTop="12dp"
+        android:background="@drawable/radius_white"
+        android:hint="Add any extra details about your trade..."
+
+        android:inputType="textMultiLine"
+        android:gravity="top|start"
+        android:minLines="4"
+        android:maxLines="6"
+        android:scrollbars="vertical"
+
+        android:padding="12dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvEnterNote" />
+
+    <TextView
+        android:id="@+id/tvExample"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="8dp"
+        android:text="Include details like condition, pickup location, etc."
+        android:textColor="#888888"
+        android:textSize="14sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/etDetails" />
+
+    <Button
+        android:id="@+id/btnGenerate"
+        style="@style/Widget.AppCompat.Button"
+        android:layout_width="342dp"
+        android:layout_height="53dp"
+        android:layout_marginTop="32dp"
+        android:background="@drawable/radius"
+        android:backgroundTint="@null"
+        android:text="Post Exchange Offer"
+        android:textAllCaps="false"
+        android:textColor="#FFFFFF"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.492"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvExample" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
