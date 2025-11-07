@@ -2,10 +2,7 @@ package com.example.solocook
 
 import android.content.Intent
 import android.os.Bundle
-import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
 import androidx.databinding.DataBindingUtil
 import com.example.solocook.databinding.ActivityMainBinding
 import kotlin.jvm.java
@@ -23,7 +20,7 @@ class MainActivity : AppCompatActivity() {
             startActivity(intent)
         }
 
-        binding.button.setOnClickListener { //두번째 버튼 클릭
+        binding.button2.setOnClickListener { //두번째 버튼 클릭
             val intent = Intent(this, BudgetRecipeActivity::class.java)
             startActivity(intent)
         }

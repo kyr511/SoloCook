@@ -1,11 +1,8 @@
 package com.example.solocook
 
+import android.content.Intent
 import android.os.Bundle
-import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.content.ContentProviderCompat.requireContext
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
 import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -32,6 +29,16 @@ class BudgetRecipeInsideActivity : AppCompatActivity() {
         val rvAdapter = BudgetRVAdapter(items)
         rv.adapter = rvAdapter
         rv.layoutManager = LinearLayoutManager(this)
+
+        //버큰클릭
+        binding.tryBtn.setOnClickListener { //try again 버튼 클릭
+
+        }
+
+        binding.backBtn.setOnClickListener { //Back to Home 버튼 클릭
+            val intent = Intent(this, MainActivity::class.java)
+            startActivity(intent)
+        }
 
 
     }

@@ -6,7 +6,7 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.solocook.R
 
-class BudgetRVAdapter (val items: ArrayList<String>) : RecyclerView.Adapter<BudgetRVAdapter.ViewHolder>() {
+class CommunityRVAdapter (val items: ArrayList<String>) : RecyclerView.Adapter<CommunityRVAdapter.ViewHolder>() {
 
     class ViewHolder(itemView : View) : RecyclerView.ViewHolder(itemView) {
         fun bindItems( items: String) {
@@ -19,7 +19,7 @@ class BudgetRVAdapter (val items: ArrayList<String>) : RecyclerView.Adapter<Budg
         parent: ViewGroup,
         viewType: Int
     ): ViewHolder {
-        val v = LayoutInflater.from(parent.context).inflate(R.layout.activity_budget_recipe_inside, parent, false)
+        val v = LayoutInflater.from(parent.context).inflate(R.layout.activity_community, parent, false)
         return ViewHolder(v)
     }
 
