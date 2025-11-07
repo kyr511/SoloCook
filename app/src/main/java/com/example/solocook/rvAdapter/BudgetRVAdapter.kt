@@ -10,7 +10,7 @@ class BudgetRVAdapter (val items: ArrayList<String>) : RecyclerView.Adapter<Budg
 
     class ViewHolder(itemView : View) : RecyclerView.ViewHolder(itemView) {
         fun bindItems( items: String) {
-            //여기 작성
+
         }
 
     }
@@ -24,7 +24,7 @@ class BudgetRVAdapter (val items: ArrayList<String>) : RecyclerView.Adapter<Budg
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        //여기 작성
+        holder.bindItems(items[position])
     }
 
     override fun getItemCount(): Int {

@@ -24,7 +24,7 @@ class IngredientsRVAdapter (val items: ArrayList<String>) : RecyclerView.Adapter
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        //여기 작성
+        holder.bindItems(items[position])
     }
 
     override fun getItemCount(): Int {
