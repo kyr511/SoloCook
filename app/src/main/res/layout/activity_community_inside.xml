@@ -8,6 +8,7 @@
     android:layout_height="match_parent"
     tools:context=".CommunityInsideActivity">
 
+    <!-- BACK BAR -->
     <LinearLayout
         android:id="@+id/linearLayout"
         android:layout_width="match_parent"
@@ -33,12 +34,14 @@
 
     </LinearLayout>
 
+    <!-- HEADER TEXT -->
     <LinearLayout
         android:id="@+id/linearLayout3"
         android:layout_width="match_parent"
-        android:layout_height="100dp"
+        android:layout_height="wrap_content"
         android:orientation="vertical"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout">
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout"
+        android:padding="10dp">
 
         <TextView
             android:layout_width="wrap_content"
@@ -56,10 +59,11 @@
 
     </LinearLayout>
 
+    <!-- CONTENT BOX -->
     <LinearLayout
         android:id="@+id/linearLayout4"
         android:layout_width="match_parent"
-        android:layout_height="300dp"
+        android:layout_height="wrap_content"
         android:layout_margin="20dp"
         android:background="@drawable/radius_white"
         android:orientation="vertical"
@@ -67,7 +71,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/linearLayout3">
-
+        <!--time 연동-->
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -89,39 +93,34 @@
 
         </LinearLayout>
 
-        <LinearLayout
-            android:id="@+id/linearLayout2"
+        <View
             android:layout_width="match_parent"
             android:orientation="horizontal"
             android:layout_height="1dp"
-            android:background="#BBBBBB"
-            app:layout_constraintTop_toBottomOf="@+id/linearLayout1" />
+            android:layout_marginTop="10dp"
+            android:background="#BBBBBB" />
 
 
-        <LinearLayout
+
+
+        <TextView
+            android:id="@+id/title"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            app:layout_constraintTop_toBottomOf="@+id/linearLayout2">
+            android:layout_marginTop="10dp"
+            android:text="Title"
+            android:textSize="18sp" />
 
-            <TextView
-                android:id="@+id/title"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="5dp"
-                android:text="Title"
-                android:textSize="18sp" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="5dp"
-                android:text="감자랑 당근이랑 바꿀 사람 구해요.\n나: 감자\n님: 당근\n엄청 커요" />
-
-        </LinearLayout>
-
+        <!--콘텐츠 연동-->
+        <TextView
+            android:id="@+id/content"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:text="감자랑 당근이랑 바꿀 사람 구해요.\n나: 감자\n님: 당근\n엄청 커요" />
     </LinearLayout>
 
+    <!-- MESSAGE BUTTON -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="50dp"
@@ -145,6 +144,7 @@
             android:textSize="16sp" />
     </LinearLayout>
 
+    <!-- REQUEST TRADE BUTTON -->
     <LinearLayout
         android:id="@+id/button4"
         android:layout_width="match_parent"
