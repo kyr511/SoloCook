@@ -27,6 +27,8 @@
         </activity>
 
         <!-- 커뮤니티 목록/상세 -->
+        <activity android:name=".CommunityActivity" />
+
         <activity
             android:name=".community.CommunityActivity"
             android:exported="false" />

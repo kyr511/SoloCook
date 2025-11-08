@@ -7,7 +7,7 @@ import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
 object RetrofitClient {
-    private const val BASE_URL = "https://YOUR_BACKEND_BASE_URL" // TODO
+    private const val BASE_URL = "https://bkqtuidf3ixhvtotvqg4lmypme0jakxy.lambda-url.us-east-1.on.aws/" // TODO
 
     private val logging = HttpLoggingInterceptor().apply { level = HttpLoggingInterceptor.Level.BODY }
     private val http = OkHttpClient.Builder().addInterceptor(logging).build()
