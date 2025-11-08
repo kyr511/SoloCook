@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+<manifest
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
+    <!-- 네트워크 호출용 권한 -->
     <uses-permission android:name="android.permission.INTERNET" />
 
     <application
@@ -13,51 +15,33 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.SoloCook">
+
+        <!-- 런처 액티비티 -->
         <activity
-            android:name=".community.CommunityInsideActivity"
-            android:exported="false" />
+            android:name=".MainActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <!-- 커뮤니티 목록/상세 -->
         <activity
             android:name=".community.CommunityActivity"
             android:exported="false" />
-        <!--
         <activity
-            android:name=".community.CommunityViewModel"
+            android:name=".community.CommunityInsideActivity"
             android:exported="false" />
 
-        <activity
-            android:name=".community.CommunityAdapter"
-            android:exported="false" />
-
-        <activity
-            android:name=".repository.CommunityRepository"
-            android:exported="false" />
-        <activity
-            android:name=".remote.RetrofitClient"
-            android:exported="false" />
-
-        <activity
-            android:name=".remote.ApiService"
-            android:exported="false" />
-        <activity
-            android:name=".util.DummyNameMapper"
-            android:exported="false" />
-        <activity
-            android:name=".model.PostUi"
-            android:exported="false" />
-        <activity
-            android:name=".model.PostDto"
-            android:exported="false" />
-            -->
-
-        <activity
-            android:name=".BudgetRecipeActivity"
-            android:exported="false" />
+        <!-- 게시글 작성 화면 -->
         <activity
             android:name=".CreateExchangePost"
             android:exported="false" />
 
+        <!-- (있다면) 다른 화면들 -->
         <activity
-            android:name=".CommunityActivity"
+            android:name=".BudgetRecipeActivity"
             android:exported="false" />
         <activity
             android:name=".BudgetRecipeInsideActivity"
@@ -68,15 +52,18 @@
         <activity
             android:name=".EnterIngredientsScreen"
             android:exported="false" />
-        <activity
-            android:name=".MainActivity"
-            android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
+        <!-- manifest에 넣으면 안됨
+             ViewModel/Repository/RetrofitClient/ApiService/Util/Model 등 비-액티비티 클래스 -->
+        <!--
+        <activity android:name=".community.CommunityViewModel" />
+        <activity android:name=".community.CommunityAdapter" />
+        <activity android:name=".repository.CommunityRepository" />
+        <activity android:name=".remote.RetrofitClient" />
+        <activity android:name=".remote.ApiService" />
+        <activity android:name=".util.DummyNameMapper" />
+        <activity android:name=".model.PostUi" />
+        <activity android:name=".model.PostDto" />
+        -->
     </application>
-
 </manifest>
