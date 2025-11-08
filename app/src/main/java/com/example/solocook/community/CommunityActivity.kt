@@ -9,7 +9,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.solocook.CommunityInsideActivity
 import com.example.solocook.R
-
+import com.example.solocook.CreateExchangePost
 class CommunityActivity : AppCompatActivity() {
 
     private val vm: CommunityViewModel by viewModels()
@@ -22,6 +22,12 @@ class CommunityActivity : AppCompatActivity() {
         // 뒤로가기 버튼
         findViewById<ImageView>(R.id.back).setOnClickListener {
             finish()
+        }
+
+        // 글쓰기(게시글 작성) 버튼
+        findViewById<ImageView>(R.id.postBtn).setOnClickListener {
+            val intent = Intent(this, CreateExchangePost::class.java)
+            startActivity(intent)
         }
 
         // 1) RecyclerView 설정
