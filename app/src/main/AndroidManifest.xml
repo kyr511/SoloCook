@@ -23,9 +23,6 @@
             android:name=".CommunityInsideActivity"
             android:exported="false" />
         <activity
-            android:name=".EditTextActivity"
-            android:exported="false" />
-        <activity
             android:name=".CommunityActivity"
             android:exported="false" />
         <activity
