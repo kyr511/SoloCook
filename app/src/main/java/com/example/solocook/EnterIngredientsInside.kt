@@ -9,7 +9,6 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.solocook.databinding.ActivityEnterIngredientsInsideBinding
 import com.example.solocook.model.IngredientsRequest
-import com.example.solocook.model.ingredients_item
 import com.example.solocook.rvAdapter.IngredientsRVAdapter
 import com.example.solocook.viewModel.ingredientViewModel
 
@@ -51,7 +50,7 @@ class EnterIngredientsInside : AppCompatActivity() {
         val rv = binding.rv
 
         viewModel.liveIngresiantsList.observe(this, Observer {
-            val ingredientAdapter = IngredientsRVAdapter(it as ArrayList<ingredients_item>)
+            val ingredientAdapter = IngredientsRVAdapter(it as ArrayList<String>)
             rv.adapter = ingredientAdapter
             rv.layoutManager = LinearLayoutManager(this)
         })

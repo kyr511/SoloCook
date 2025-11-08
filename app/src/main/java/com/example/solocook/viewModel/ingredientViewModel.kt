@@ -7,7 +7,6 @@ import androidx.lifecycle.viewModelScope
 import com.example.solocook.api.Api
 import com.example.solocook.api.RetrofitInstance1
 import com.example.solocook.model.IngredientsRequest
-import com.example.solocook.model.ingredients_item
 import kotlinx.coroutines.launch
 
 class ingredientViewModel : ViewModel() {
@@ -25,8 +24,8 @@ class ingredientViewModel : ViewModel() {
         get() = mutableExplain
 
     //요리재료(재료, 양)
-    private var mutableIngresiantsList = MutableLiveData<ArrayList<ingredients_item>>()
-    val liveIngresiantsList: LiveData<ArrayList<ingredients_item>>
+    private var mutableIngresiantsList = MutableLiveData<ArrayList<String>>()
+    val liveIngresiantsList: LiveData<ArrayList<String>>
         get() = mutableIngresiantsList
 
     //레시피

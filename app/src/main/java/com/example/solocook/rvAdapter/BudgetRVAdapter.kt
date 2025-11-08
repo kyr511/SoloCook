@@ -6,10 +6,11 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.solocook.R
-import com.example.solocook.model.budget_item
-import com.example.solocook.model.ingredients_item
 
-class BudgetRVAdapter (private val dataset: ArrayList<budget_item>) : RecyclerView.Adapter<BudgetRVAdapter.ViewHolder>() {
+class BudgetRVAdapter (
+    private val ingredients: ArrayList<String>,
+    private val prices: ArrayList<Int>
+) : RecyclerView.Adapter<BudgetRVAdapter.ViewHolder>() {
 
     class ViewHolder(itemView : View) : RecyclerView.ViewHolder(itemView) {
         val foodName: TextView
@@ -30,11 +31,11 @@ class BudgetRVAdapter (private val dataset: ArrayList<budget_item>) : RecyclerVi
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        holder.foodName.text = dataset[position].foodName
-        holder.foodPrice.text = dataset[position].foodPrice.toString()
+        holder.foodName.text = ingredients[position]
+        holder.foodPrice.text = prices[position].toString()
     }
 
     override fun getItemCount(): Int {
-        return dataset.size
+        return ingredients.size
     }
 }

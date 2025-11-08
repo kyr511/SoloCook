@@ -13,11 +13,6 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.SoloCook">
-
-        <activity android:name=".community.CommunityInsideActivity" />
-        <activity android:name=".community.CommunityActivity" />
-
-
         <activity
             android:name=".community.CommunityInsideActivity"
             android:exported="false" />

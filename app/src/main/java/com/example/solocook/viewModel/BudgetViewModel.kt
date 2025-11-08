@@ -7,7 +7,6 @@ import androidx.lifecycle.viewModelScope
 import com.example.solocook.api.Api
 import com.example.solocook.api.RetrofitInstance1
 import com.example.solocook.api.RetrofitInstance2
-import com.example.solocook.model.budget_item
 import kotlinx.coroutines.launch
 
 class BudgetViewModel : ViewModel() {
@@ -23,10 +22,17 @@ class BudgetViewModel : ViewModel() {
     val liveExplain: LiveData<String>
         get() = mutableExplain
 
-    //요리재료(재료, 양)
-    private var mutableBudgetList = MutableLiveData<ArrayList<budget_item>>()
-    val liveBudgetList: LiveData<ArrayList<budget_item>>
-        get() = mutableBudgetList
+    //요리재료 리스트
+    private var mutableIngredientsList = MutableLiveData<ArrayList<String>>()
+    val liveIngredientsList: LiveData<ArrayList<String>>
+        get() = mutableIngredientsList
+
+    //요리재료가격리스트
+    private var mutablePriceList = MutableLiveData<ArrayList<Int>>()
+    val livePriceList: LiveData<ArrayList<Int>>
+        get() = mutablePriceList
+
+
 
     //레시피
     private var mutableRecipe = MutableLiveData<String>()
@@ -38,7 +44,7 @@ class BudgetViewModel : ViewModel() {
         val card = retrofitInstance.getRecipeCard2(request)
         mutableTitle.value = card.title
         mutableExplain.value = card.explain
-        mutableBudgetList.value = card.ingredients
+        mutableIngredientsList.value = card.ingredients
         mutableRecipe.value = card.recipe
 
     }

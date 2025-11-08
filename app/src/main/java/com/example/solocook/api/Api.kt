@@ -1,7 +1,6 @@
 package com.example.solocook.api
 
 import com.example.solocook.model.IngredientsRequest
-import com.example.solocook.model.budget_item
 import com.example.solocook.model.recipeCard1
 import com.example.solocook.model.recipeCard2
 import retrofit2.Call

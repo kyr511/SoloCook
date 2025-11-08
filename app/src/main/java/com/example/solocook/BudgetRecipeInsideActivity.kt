@@ -9,8 +9,6 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.solocook.databinding.ActivityBudgetRecipeInsideBinding
-import com.example.solocook.model.budget_item
-import com.example.solocook.model.ingredients_item
 import com.example.solocook.rvAdapter.BudgetRVAdapter
 import com.example.solocook.rvAdapter.IngredientsRVAdapter
 import com.example.solocook.viewModel.BudgetViewModel
@@ -51,15 +49,24 @@ class BudgetRecipeInsideActivity : AppCompatActivity() {
 
         //Recyclerdview
         val rv = binding.rv
+        rv.layoutManager = LinearLayoutManager(this)
 
-        viewModel.liveBudgetList.observe(this, Observer {
-            val budgetAdapter = BudgetRVAdapter(it as ArrayList<budget_item>)
-            rv.adapter = budgetAdapter
-            rv.layoutManager = LinearLayoutManager(this)
-            //금액 합계
-            val total = it.sumOf { it.foodPrice }
-            binding.total.text = total.toString()
-        })
+        fun updateAdapter() {
+            val ingredients = viewModel.liveIngredientsList.value
+            val prices = viewModel.livePriceList.value
+            if (ingredients != null && prices != null && ingredients.size == prices.size) {
+                val budgetAdapter = BudgetRVAdapter(ingredients, prices) // Adapter가 두 리스트를 받도록 설계됨
+                rv.adapter = budgetAdapter
+
+                // 총합 계산
+                val total = prices.sum()
+                binding.total.text = total.toString()
+            }
+        }
+
+        viewModel.liveIngredientsList.observe(this) { updateAdapter() }
+        viewModel.livePriceList.observe(this) { updateAdapter() }
+
 
         //버큰클릭
         binding.tryBtn.setOnClickListener { //try again 버튼 클릭
