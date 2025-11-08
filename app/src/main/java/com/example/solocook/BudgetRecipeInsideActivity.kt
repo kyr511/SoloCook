@@ -2,6 +2,8 @@ package com.example.solocook
 
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.Observer
@@ -46,7 +48,6 @@ class BudgetRecipeInsideActivity : AppCompatActivity() {
             recipe.text = it.toString()
         })
 
-
         //Recyclerdview
         val rv = binding.rv
 
@@ -57,14 +58,15 @@ class BudgetRecipeInsideActivity : AppCompatActivity() {
             val prices = viewModel.livePriceList.value
 
             if (ingredients != null && prices != null && ingredients.size == prices.size) {
-                val budgetAdapter = BudgetRVAdapter(ingredients, prices) // Adapter가 두 리스트를 받도록 설계됨
+                val budgetAdapter = BudgetRVAdapter(ingredients, prices)
                 rv.adapter = budgetAdapter
 
+                // 총합 계산
                 val total = prices.sum()
                 binding.total.text = total.toString()
-
+            } else {
+                Log.w("BudgetRecipeInside", "데이터 불일치: Ingredients: ${ingredients?.size}, Prices: ${prices?.size}")
             }
-
         }
 
         viewModel.liveIngredientsList.observe(this) { updateAdapter() }

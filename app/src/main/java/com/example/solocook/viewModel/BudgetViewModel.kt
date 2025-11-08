@@ -1,6 +1,7 @@
 package com.example.solocook.viewModel
 
 import android.util.Log
+import android.widget.Toast
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
@@ -49,6 +50,7 @@ class BudgetViewModel : ViewModel() {
                 mutableTitle.value = card.title
                 mutableExplain.value = card.explain
                 mutableIngredientsList.value = card.ingredients
+                mutablePriceList.value = card.ingredients_price
                 mutableRecipe.value = card.recipe
             } catch (e: HttpException) {
                 // HTTP 에러가 발생했을 때 (예: 404, 500 등)
